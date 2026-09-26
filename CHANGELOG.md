@@ -1,0 +1,296 @@
+# Changelog
+
+## [1.19.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.18.0...v1.19.0) (2026-09-15)
+
+
+### Features
+
+* move milestone labels on a maintenance release ([#102](https://github.com/shopwell-shop/gh-project-automation/issues/102)) ([70c8d94](https://github.com/shopwell-shop/gh-project-automation/commit/70c8d946ba64dbf6329184fc36bf9ca717e9e1b2))
+
+
+### Bug Fixes
+
+* measure pull request inactivity by human activity, not updated_at ([#96](https://github.com/shopwell-shop/gh-project-automation/issues/96)) ([bb0698f](https://github.com/shopwell-shop/gh-project-automation/commit/bb0698f6fba1630650df6a79dc2c399353b556ad))
+
+## [1.18.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.17.0...v1.18.0) (2026-09-14)
+
+
+### Features
+
+* schedule the milestone of an upcoming release ([#99](https://github.com/shopwell-shop/gh-project-automation/issues/99)) ([882b81e](https://github.com/shopwell-shop/gh-project-automation/commit/882b81e24237d12b8bf8b3f2f62ed8326d3a9ed2))
+
+## [1.17.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.16.0...v1.17.0) (2026-09-14)
+
+
+### Features
+
+* close milestones of released versions ([#97](https://github.com/shopwell-shop/gh-project-automation/issues/97)) ([e28df06](https://github.com/shopwell-shop/gh-project-automation/commit/e28df06ba09abd5a8cd57b2a90da406c7cb1551d))
+
+## [1.16.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.15.3...v1.16.0) (2026-07-30)
+
+
+### Features
+
+* add denylist for branches, increase error tolerance ([#93](https://github.com/shopwell-shop/gh-project-automation/issues/93)) ([d3e4bef](https://github.com/shopwell-shop/gh-project-automation/commit/d3e4bef6a733ebf9362717ed0c913fa4b2745885))
+
+## [1.15.3](https://github.com/shopwell-shop/gh-project-automation/compare/v1.15.2...v1.15.3) (2026-07-13)
+
+
+### Bug Fixes
+
+* filter for private repos in linkClosingPR ([#91](https://github.com/shopwell-shop/gh-project-automation/issues/91)) ([0d64be4](https://github.com/shopwell-shop/gh-project-automation/commit/0d64be444f78a4fac62862528a8cb34493aae98f))
+
+## [1.15.2](https://github.com/shopwell-shop/gh-project-automation/compare/v1.15.1...v1.15.2) (2026-07-09)
+
+
+### Bug Fixes
+
+* use separate pr read client in linkClosingPR ([#86](https://github.com/shopwell-shop/gh-project-automation/issues/86)) ([e586848](https://github.com/shopwell-shop/gh-project-automation/commit/e5868486f00095fe5b6a9b210da0e02ea30808f8))
+
+## [1.15.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.15.0...v1.15.1) (2026-07-08)
+
+
+### Bug Fixes
+
+* handle bot actors in getVerifiedDomainEmails ([#84](https://github.com/shopwell-shop/gh-project-automation/issues/84)) ([0acfe7a](https://github.com/shopwell-shop/gh-project-automation/commit/0acfe7ac33e2af46953bbee699b1c024243b4266))
+
+## [1.15.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.14.2...v1.15.0) (2026-07-01)
+
+
+### Features
+
+* add function to move milestone labels and fix label ([#82](https://github.com/shopwell-shop/gh-project-automation/issues/82)) ([a69932b](https://github.com/shopwell-shop/gh-project-automation/commit/a69932b4a72c4e96c4a35017e174907221592d30))
+* add linkClosingPR ([#81](https://github.com/shopwell-shop/gh-project-automation/issues/81)) ([50cf48e](https://github.com/shopwell-shop/gh-project-automation/commit/50cf48e3c06d435943022cb0cad48eff09be472b))
+* add rate-limiting ([#76](https://github.com/shopwell-shop/gh-project-automation/issues/76)) ([f20eb74](https://github.com/shopwell-shop/gh-project-automation/commit/f20eb74e3ef43bf2916e136233b3169aa6c09359))
+
+
+### Bug Fixes
+
+* branch cleanup ([#74](https://github.com/shopwell-shop/gh-project-automation/issues/74)) ([fc78cc3](https://github.com/shopwell-shop/gh-project-automation/commit/fc78cc371d8a4486395dd17eb75ecd66fe9f3970))
+
+## [1.14.2](https://github.com/shopwell-shop/gh-project-automation/compare/v1.14.1...v1.14.2) (2026-03-06)
+
+
+### Bug Fixes
+
+* update dependencies ([#71](https://github.com/shopwell-shop/gh-project-automation/issues/71)) ([2d10144](https://github.com/shopwell-shop/gh-project-automation/commit/2d10144ec275791e962218a430ad94acf9a808b0))
+
+## [1.14.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.14.0...v1.14.1) (2026-02-03)
+
+
+### Bug Fixes
+
+* **deps:** update github dependencies ([#69](https://github.com/shopwell-shop/gh-project-automation/issues/69)) ([201663a](https://github.com/shopwell-shop/gh-project-automation/commit/201663ac58419a471ddc9e39f14bb9b82ea704fe))
+
+## [1.14.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.13.0...v1.14.0) (2026-01-21)
+
+
+### Features
+
+* add excludedRepositories to manageOldPullRequests ([#67](https://github.com/shopwell-shop/gh-project-automation/issues/67)) ([6eef6c3](https://github.com/shopwell-shop/gh-project-automation/commit/6eef6c3883e75d1a2e29e7a8d807e067649eb677))
+
+## [1.13.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.12.1...v1.13.0) (2025-11-19)
+
+
+### Features
+
+* add updateMilestonesOnRelease ([#64](https://github.com/shopwell-shop/gh-project-automation/issues/64)) ([c5453f7](https://github.com/shopwell-shop/gh-project-automation/commit/c5453f79647f4530ac763b44503b47e6f986ce4b))
+
+## [1.12.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.12.0...v1.12.1) (2025-10-29)
+
+
+### Bug Fixes
+
+* add repository.url ([#62](https://github.com/shopwell-shop/gh-project-automation/issues/62)) ([050206f](https://github.com/shopwell-shop/gh-project-automation/commit/050206f98be67006294ca39297b304cf6ad29dc0))
+
+## [1.12.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.11.1...v1.12.0) (2025-10-29)
+
+
+### Features
+
+* add checkMissingLicenseInRepos ([#57](https://github.com/shopwell-shop/gh-project-automation/issues/57)) ([b75be7b](https://github.com/shopwell-shop/gh-project-automation/commit/b75be7b205df96ebbfd08581f4891d982df677bd))
+* add saas to branch cleanup ([#60](https://github.com/shopwell-shop/gh-project-automation/issues/60)) ([8b37ad3](https://github.com/shopwell-shop/gh-project-automation/commit/8b37ad315fedc7fc9df851c388dd0abedaed8547))
+
+## [1.11.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.11.0...v1.11.1) (2025-08-28)
+
+
+### Bug Fixes
+
+* finding issue in setMilestoneForPR ([#55](https://github.com/shopwell-shop/gh-project-automation/issues/55)) ([fac59a5](https://github.com/shopwell-shop/gh-project-automation/commit/fac59a5c557b468665cd6a65fe4a4780e1ff9580))
+
+## [1.11.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.10.0...v1.11.0) (2025-08-19)
+
+
+### Features
+
+* add setMilestoneForPR ([#53](https://github.com/shopwell-shop/gh-project-automation/issues/53)) ([67682e7](https://github.com/shopwell-shop/gh-project-automation/commit/67682e7128ee1145d22b2bbd0658e01af17698d6))
+
+## [1.10.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.9.1...v1.10.0) (2025-07-31)
+
+
+### Features
+
+* add cancelStuckWorkflows ([#47](https://github.com/shopwell-shop/gh-project-automation/issues/47)) ([f19f388](https://github.com/shopwell-shop/gh-project-automation/commit/f19f388fbccaac438814cec255d2672b269aecfc))
+
+
+### Bug Fixes
+
+* catch exception when slack user was not found ([#51](https://github.com/shopwell-shop/gh-project-automation/issues/51)) ([2698d7c](https://github.com/shopwell-shop/gh-project-automation/commit/2698d7c47ef50a937619291dbb86b774a0a80ddb))
+* missing permissions in cancel-stuck-workflows ([#49](https://github.com/shopwell-shop/gh-project-automation/issues/49)) ([b64413f](https://github.com/shopwell-shop/gh-project-automation/commit/b64413faf65e6a601d8895f0cdd7259f72cd6861))
+
+## [1.9.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.9.0...v1.9.1) (2025-07-10)
+
+
+### Bug Fixes
+
+* rename close labels ([#45](https://github.com/shopwell-shop/gh-project-automation/issues/45)) ([7872e1b](https://github.com/shopwell-shop/gh-project-automation/commit/7872e1bfc83694f5472e8c7edbbd719917558de1))
+
+## [1.9.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.8.0...v1.9.0) (2025-07-09)
+
+
+### Features
+
+* return slack user instead of the id and get user by email ([#43](https://github.com/shopwell-shop/gh-project-automation/issues/43)) ([1b679b3](https://github.com/shopwell-shop/gh-project-automation/commit/1b679b396eb76e6cf4c4a11a9810a4c5c325f772))
+
+## [1.8.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.7.2...v1.8.0) (2025-07-02)
+
+
+### Features
+
+* cleanup old branches ([#41](https://github.com/shopwell-shop/gh-project-automation/issues/41)) ([c7eadce](https://github.com/shopwell-shop/gh-project-automation/commit/c7eadce6d31095800c8c8070ea02f17dbc76aa77))
+
+
+### Bug Fixes
+
+* explicitly specify `draft:false` in order to exclude drafts from stale check ([#42](https://github.com/shopwell-shop/gh-project-automation/issues/42)) ([22a740b](https://github.com/shopwell-shop/gh-project-automation/commit/22a740b5ce8de5208c990c0123e337c0f205fb6c))
+* **syncPriorities:** set default for excludeList ([#39](https://github.com/shopwell-shop/gh-project-automation/issues/39)) ([3cdae1c](https://github.com/shopwell-shop/gh-project-automation/commit/3cdae1cdf6aeb32608d3d37e5f14d888f14b48b8))
+
+## [1.7.2](https://github.com/shopwell-shop/gh-project-automation/compare/v1.7.1...v1.7.2) (2025-07-01)
+
+
+### Bug Fixes
+
+* abort processing stale PR, when no verified domain email was found for the assignee ([#36](https://github.com/shopwell-shop/gh-project-automation/issues/36)) ([0f834fc](https://github.com/shopwell-shop/gh-project-automation/commit/0f834fc99d764fcf9e3cf1f02a0a65944403c001))
+* skip messaging via Slack, comment upon closing instead ([#37](https://github.com/shopwell-shop/gh-project-automation/issues/37)) ([0f834fc](https://github.com/shopwell-shop/gh-project-automation/commit/0f834fc99d764fcf9e3cf1f02a0a65944403c001))
+
+## [1.7.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.7.0...v1.7.1) (2025-06-25)
+
+
+### Bug Fixes
+
+* add dry-run mode ([#34](https://github.com/shopwell-shop/gh-project-automation/issues/34)) ([6c516e1](https://github.com/shopwell-shop/gh-project-automation/commit/6c516e1fe5f4b8fc09b6b26998d0202bfdc0f812))
+
+## [1.7.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.6.2...v1.7.0) (2025-06-24)
+
+
+### Features
+
+* pull request reminders support ([#31](https://github.com/shopwell-shop/gh-project-automation/issues/31)) ([1b186e8](https://github.com/shopwell-shop/gh-project-automation/commit/1b186e86881de70ebed6d806aba60f60a260fdcf))
+
+## [1.6.2](https://github.com/shopwell-shop/gh-project-automation/compare/v1.6.1...v1.6.2) (2025-06-04)
+
+
+### Bug Fixes
+
+* getProjectInfo variable ([#27](https://github.com/shopwell-shop/gh-project-automation/issues/27)) ([45d5b7b](https://github.com/shopwell-shop/gh-project-automation/commit/45d5b7be462fdf9715e9911c41ca29e581f1c21b))
+
+## [1.6.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.6.0...v1.6.1) (2025-05-28)
+
+
+### Bug Fixes
+
+* return repository information when searching for related issues ([#25](https://github.com/shopwell-shop/gh-project-automation/issues/25)) ([2d2fe3e](https://github.com/shopwell-shop/gh-project-automation/commit/2d2fe3e19425e008bbad21804d8d9523fe6af60b))
+
+## [1.6.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.5.0...v1.6.0) (2025-05-27)
+
+
+### Features
+
+* add method to fetch related issues by PR ([#23](https://github.com/shopwell-shop/gh-project-automation/issues/23)) ([c8b6eab](https://github.com/shopwell-shop/gh-project-automation/commit/c8b6eabe1bb8965047ac2700c64f554e58a41178))
+
+## [1.5.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.4.2...v1.5.0) (2025-05-23)
+
+
+### Features
+
+* add doc tasks for all epics in progress, that don't already reference one ([#21](https://github.com/shopwell-shop/gh-project-automation/issues/21)) ([eb5a9a0](https://github.com/shopwell-shop/gh-project-automation/commit/eb5a9a0ba4158a4730e1b0d5433a3e17f9ccfbaa))
+
+## [1.4.2](https://github.com/shopwell-shop/gh-project-automation/compare/v1.4.1...v1.4.2) (2025-05-20)
+
+
+### Bug Fixes
+
+* remove issue title from logs ([#19](https://github.com/shopwell-shop/gh-project-automation/issues/19)) ([8793bcf](https://github.com/shopwell-shop/gh-project-automation/commit/8793bcfd76f5733e9b50ca8c49774aa2c876a9ce))
+
+## [1.4.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.4.0...v1.4.1) (2025-05-16)
+
+
+### Bug Fixes
+
+* add missing $ to labelableId ([#17](https://github.com/shopwell-shop/gh-project-automation/issues/17)) ([05bd8ec](https://github.com/shopwell-shop/gh-project-automation/commit/05bd8ecb6a2015b92f70e6e019c91dd9b3d0fe31))
+
+## [1.4.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.3.1...v1.4.0) (2025-05-16)
+
+
+### Features
+
+* add cleanupNeedsTriage ([#15](https://github.com/shopwell-shop/gh-project-automation/issues/15)) ([c8d0f96](https://github.com/shopwell-shop/gh-project-automation/commit/c8d0f963e8f50144046983a1db334992d90b027b))
+
+
+### Bug Fixes
+
+* markStaleIssues logic ([#11](https://github.com/shopwell-shop/gh-project-automation/issues/11)) ([77d2eeb](https://github.com/shopwell-shop/gh-project-automation/commit/77d2eeb39f1027422acb871a8a09a312c12b98e6))
+
+## [1.3.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.3.0...v1.3.1) (2025-05-14)
+
+
+### Bug Fixes
+
+* allow documentation project ID to be passed in ([#13](https://github.com/shopwell-shop/gh-project-automation/issues/13)) ([086a6f6](https://github.com/shopwell-shop/gh-project-automation/commit/086a6f6a80a7b2566fad4e281157a727ce239479))
+
+## [1.3.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.2.0...v1.3.0) (2025-05-14)
+
+
+### Features
+
+* add logic for automatic documentation task creation ([#12](https://github.com/shopwell-shop/gh-project-automation/issues/12)) ([e2aae79](https://github.com/shopwell-shop/gh-project-automation/commit/e2aae79bd0d5ef597b5f5218905f1a632846d4ce))
+
+
+### Bug Fixes
+
+* convert param to number in markStaleIssues ([#9](https://github.com/shopwell-shop/gh-project-automation/issues/9)) ([eb100cf](https://github.com/shopwell-shop/gh-project-automation/commit/eb100cfc1f72d0064183348379b77e756d8e962e))
+
+## [1.2.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.1.1...v1.2.0) (2025-04-07)
+
+
+### Features
+
+* add sync issue priority and mark and close stale issues ([#7](https://github.com/shopwell-shop/gh-project-automation/issues/7)) ([084ed2a](https://github.com/shopwell-shop/gh-project-automation/commit/084ed2ad97d83bcb61e1f2973ca50b45541234ac))
+
+## [1.1.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.1.0...v1.1.1) (2025-03-14)
+
+
+### Bug Fixes
+
+* return project items correctly and fix type ([9bc36ac](https://github.com/shopwell-shop/gh-project-automation/commit/9bc36ac8f551aa7e109aae6e73e0cea68c2512f4))
+
+## [1.1.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.0.1...v1.1.0) (2025-03-14)
+
+
+### Features
+
+* use optionalDependencies ([c5e906d](https://github.com/shopwell-shop/gh-project-automation/commit/c5e906d66bb75ddc1a0401e68a0496871dabb964))
+
+## [1.0.1](https://github.com/shopwell-shop/gh-project-automation/compare/v1.0.0...v1.0.1) (2025-03-14)
+
+
+### Bug Fixes
+
+* fix docs ([0b92fc0](https://github.com/shopwell-shop/gh-project-automation/commit/0b92fc0af9f9c7cc0f4aa235ed9833d312ef6ec7))
+
+## 1.0.0 (2025-03-14)
+
+
+### Features
+
+* add `setStatusInProjects` function ([83de239](https://github.com/shopwell-shop/gh-project-automation/commit/83de2393fa48aae922f04349ded198804235f12b))
