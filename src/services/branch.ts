@@ -13,7 +13,7 @@ import { rateLimitedRun } from "../util/rate_limiting";
  */
 export const protectedReleaseBranchRegex = /^(saas\/2025\/\d+|\d+\.(\d+|x)(\.\d+|\.x)?(\.\d+|\.x)?)$/;
 
-export async function getOldBranches(toolkit: Toolkit, repo: string, excludeRegex: string | RegExp = "", organization: string = "shopwell"): Promise<string[] | null> {
+export async function getOldBranches(toolkit: Toolkit, repo: string, excludeRegex: string | RegExp = "", organization: string = "shopwell-shop"): Promise<string[] | null> {
     const DAYS_UNTIL_STALE = 6 * 30;
 
     toolkit.core.info(`Getting branches for ${organization}/${repo}`);
@@ -113,7 +113,7 @@ export async function getOldBranches(toolkit: Toolkit, repo: string, excludeRege
     return oldBranches;
 }
 
-export async function cleanupBranches(toolkit: Toolkit, repo: string, organization: string = "shopwell", excludeRegex: string | RegExp = "") {
+export async function cleanupBranches(toolkit: Toolkit, repo: string, organization: string = "shopwell-shop", excludeRegex: string | RegExp = "") {
     const branches = await getOldBranches(toolkit, repo, excludeRegex, organization);
     if (!branches) {
         toolkit.core.error("No old branches found!");

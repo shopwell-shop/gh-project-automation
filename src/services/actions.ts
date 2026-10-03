@@ -1,6 +1,6 @@
 import { Toolkit } from "../types";
 
-export async function cancelStuckWorkflows(toolkit: Toolkit, repo: string, organization: string = "shopwell") {
+export async function cancelStuckWorkflows(toolkit: Toolkit, repo: string, organization: string = "shopwell-shop") {
     const TIME_THRESHOLD = 2 * 3600;
 
     const queuedRuns = await toolkit.github.rest.actions.listWorkflowRunsForRepo({
@@ -42,7 +42,7 @@ export async function cancelStuckWorkflows(toolkit: Toolkit, repo: string, organ
     }
 }
 
-export async function checkMissingLiceneInRepos(toolkit: Toolkit, organization: string = "shopwell") {
+export async function checkMissingLiceneInRepos(toolkit: Toolkit, organization: string = "shopwell-shop") {
     const excludeRepositories: Array<string> = [];
 
     let currentCursor = null;

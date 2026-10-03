@@ -15,7 +15,7 @@ import { isNonHumanLogin, lastHumanActivityAt } from "../util/activity";
  * Inactivity is the age of the last human event on the pull request, not GitHub's
  * `updated_at`. Searching on `updated:<` misses exactly the pull requests this is meant to
  * find: any bot touching a label resets that clock, and a milestone rotation in
- * shopwell/shopwell did so for 71 of 273 open pull requests in one pass, leaving the
+ * shopwell-shop/shopwell did so for 71 of 273 open pull requests in one pass, leaving the
  * candidate pool there empty. `created:<` is the prefilter instead — nothing stale for
  * `days` can have been opened more recently than that — and the real measure runs over the
  * result.
@@ -31,7 +31,7 @@ import { isNonHumanLogin, lastHumanActivityAt } from "../util/activity";
  * @param days - Consider pull requests old after this many days of inactivity.
  * @param close - If true, the pull request will be closed after sending the reminder.
  */
-export async function manageOldPullRequests(toolkit: Toolkit, organization: string = "shopwell", days: number = 7, close: boolean = false, excludedRepositories: string[] = []) {
+export async function manageOldPullRequests(toolkit: Toolkit, organization: string = "shopwell-shop", days: number = 7, close: boolean = false, excludedRepositories: string[] = []) {
     const cutoff = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
     const pullRequests = await getPullRequests(
         toolkit,

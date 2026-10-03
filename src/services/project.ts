@@ -133,7 +133,7 @@ export async function syncPriorities(toolkit: Toolkit, excludeList: number[] = [
  * @param description - Prefix for the description of the documentation task.
  * @param comment - Prefix for the documentation task reference comment.
  */
-export async function createDocumentationTasksForProjects(toolkit: Toolkit, projectNumbers: number[], organization: string | null = "shopwell", documentationProjectId: number | null = 11806, description: string | null = null, comment: string | null = null) {
+export async function createDocumentationTasksForProjects(toolkit: Toolkit, projectNumbers: number[], organization: string | null = "shopwell-shop", documentationProjectId: number | null = 11806, description: string | null = null, comment: string | null = null) {
     for (const projectNumber of projectNumbers) {
         const projectId = await getProjectIdByNumber(toolkit, projectNumber, organization);
         const epicsInProgress = await getEpicsInProgressByProject(toolkit, projectId);
@@ -165,7 +165,7 @@ export async function markStaleIssues(toolkit: Toolkit, projectNumber: number, d
                     search(
                       type: ISSUE
                       first: 100
-                      query: "repo:shopwell/shopwell is:issue state:open project:shopwell/27 label:priority/low -label:lifecycle/AboutToClose -label:lifecycle/DoNotClose created:<=$staleDate"
+                      query: "repo:shopwell-shop/shopwell is:issue state:open project:shopwell-shop/27 label:priority/low -label:lifecycle/AboutToClose -label:lifecycle/DoNotClose created:<=$staleDate"
                     ) {
                       pageInfo {
                         hasNextPage
@@ -301,7 +301,7 @@ export async function closeStaleIssues(toolkit: Toolkit, dryRun: boolean) {
             search(
               type: ISSUE
               first: 100
-              query: "repo:shopwell/shopwell is:issue state:open label:lifecycle/AboutToClose updated:<=$closeDate"
+              query: "repo:shopwell-shop/shopwell is:issue state:open label:lifecycle/AboutToClose updated:<=$closeDate"
             ) {
               pageInfo {
                 hasNextPage
