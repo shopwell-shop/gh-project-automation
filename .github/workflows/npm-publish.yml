@@ -62,5 +62,17 @@ jobs:
             npm publish --access public --provenance
           fi
 
-          published_version="$(npm view "${package_name}@${package_version}" version)"
-          [[ "${published_version}" == "${package_version}" ]]
+          for attempt in {1..12}; do
+            published_version=""
+            if published_version="$(npm view "${package_name}@${package_version}" version --prefer-online 2>/dev/null)" \
+              && [[ "${published_version}" == "${package_version}" ]]; then
+              exit 0
+            fi
+
+            if [[ "${attempt}" -eq 12 ]]; then
+              echo "${package_name}@${package_version} was not queryable after publication" >&2
+              exit 1
+            fi
+
+            sleep 10
+          done
