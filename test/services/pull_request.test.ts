@@ -44,7 +44,7 @@ function staleToolkit(pullRequests: TestPullRequest[], internalLogins: string[] 
                         number: pr.number,
                         url: `https://github.com/shopwell-shop/shopwell/pull/${pr.number}`,
                         author: { login: pr.author ?? "someone" },
-                        repository: { owner: { login: "shopwell" }, name: "shopwell" },
+                        repository: { owner: { login: "shopwell-shop" }, name: "shopwell" },
                         assignees: { nodes: pr.assignee ? [{ login: pr.assignee }] : [] },
                         reviewRequests: { nodes: [] },
                         closingIssuesReferences: { nodes: [] },
@@ -99,7 +99,7 @@ describe("manageOldPullRequests", () => {
         // clock, and one milestone rotation reset 71 of 273 open pull requests at once.
         const { toolkit } = staleToolkit([]);
 
-        return manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true).then(() => {
+        return manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true).then(() => {
             const [, variables] = toolkit.github.graphql.mock.calls[0];
 
             expect(variables.searchQuery).toContain("created:<");
@@ -117,7 +117,7 @@ describe("manageOldPullRequests", () => {
             ],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual(["id-5420"]);
         expect(comments).toEqual(["id-5420"]);
@@ -130,7 +130,7 @@ describe("manageOldPullRequests", () => {
             timeline: [{ createdAt: daysAgo(3), author: { login: "h1k3r", __typename: "User" } }],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
     });
@@ -143,7 +143,7 @@ describe("manageOldPullRequests", () => {
             reviewThreads: [{ comments: { nodes: [{ createdAt: daysAgo(2), author: { login: "gecolay", __typename: "User" } }] } }],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
     });
@@ -152,7 +152,7 @@ describe("manageOldPullRequests", () => {
         // The gate that keeps this job off community contributions stays where it was.
         const { toolkit, closed } = staleToolkit([{ number: 9265, timeline: [{ createdAt: OLD, author: { login: "wexoag", __typename: "User" } }] }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
     });
@@ -163,14 +163,14 @@ describe("manageOldPullRequests", () => {
             ["someone"],
         );
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
     });
 
     it("never closes a community contribution, even with a maintainer assigned", async () => {
         // The assignee gate alone did not cover this. On the live organization the fixed
-        // measure put shopwell/shopwell#16259, #11516, #5420 and #13970 up for closing:
+        // measure put shopwell-shop/shopwell#16259, #11516, #5420 and #13970 up for closing:
         // all external contributions, all assigned to one of us, which is exactly the
         // handling we ask for.
         const { toolkit, closed, comments } = staleToolkit([{
@@ -180,7 +180,7 @@ describe("manageOldPullRequests", () => {
             timeline: [{ createdAt: OLD, author: { login: "gecolay", __typename: "User" } }],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
         expect(comments).toEqual([]);
@@ -194,7 +194,7 @@ describe("manageOldPullRequests", () => {
             timeline: [{ createdAt: OLD, author: { login: "someone", __typename: "User" } }],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
         expect(toolkit.github.graphql.mock.calls.some(([query]: [string]) => query.includes("getVerifiedDomainEmails"))).toBe(false);
@@ -217,7 +217,7 @@ describe("manageOldPullRequests", () => {
                             number: 1,
                             url: "https://github.com/shopwell-shop/shopwell/pull/1",
                             author: null,
-                            repository: { owner: { login: "shopwell" }, name: "shopwell" },
+                            repository: { owner: { login: "shopwell-shop" }, name: "shopwell" },
                             assignees: { nodes: [{ login: "mitelg" }] },
                             timelineItems: { nodes: [{ createdAt: OLD, author: { login: "someone", __typename: "User" } }] },
                             reviewThreads: { nodes: [] },
@@ -229,7 +229,7 @@ describe("manageOldPullRequests", () => {
             throw new Error(`unexpected query: ${query.slice(0, 60)}`);
         });
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
     });
@@ -242,7 +242,7 @@ describe("manageOldPullRequests", () => {
             timeline: [{ createdAt: OLD, author: { login: "g-volker", __typename: "User" } }],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true);
 
         expect(closed).toEqual([]);
         expect(comments).toEqual([]);
@@ -256,7 +256,7 @@ describe("manageOldPullRequests", () => {
             timeline: [{ createdAt: OLD, author: { login: "g-volker", __typename: "User" } }],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, false);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, false);
 
         expect(closed).toEqual([]);
     });
@@ -268,7 +268,7 @@ describe("manageOldPullRequests", () => {
             timeline: [{ createdAt: OLD, author: { login: "g-volker", __typename: "User" } }],
         }]);
 
-        await manageOldPullRequests(toolkit, "shopwell", CUTOFF_DAYS, true, ["shopwell"]);
+        await manageOldPullRequests(toolkit, "shopwell-shop", CUTOFF_DAYS, true, ["shopwell"]);
 
         expect(closed).toEqual([]);
     });

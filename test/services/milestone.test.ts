@@ -86,7 +86,7 @@ describe("moveMilestoneLabelsToNextVersion", () => {
 
         // The GraphQL query is scoped to the current label and repo.
         expect(toolkit.github.graphql).toHaveBeenCalledWith(expect.any(String), expect.objectContaining({
-            owner: "shopwell",
+            owner: "shopwell-shop",
             repo: "shopwell",
             label: "milestone/6.7.10.0",
         }));
@@ -284,7 +284,7 @@ describe("closeCompletedMilestones", () => {
         await closeCompletedMilestones(toolkit);
 
         expect(toolkit.github.paginate).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({
-            owner: "shopwell",
+            owner: "shopwell-shop",
             repo: "shopwell",
             state: "open",
         }));
@@ -413,7 +413,7 @@ describe("ensureReleaseMilestone", () => {
         await ensureReleaseMilestone(toolkit, schedule);
 
         expect(toolkit.github.rest.issues.createMilestone).toHaveBeenCalledWith(expect.objectContaining({
-            owner: "shopwell",
+            owner: "shopwell-shop",
             repo: "shopwell",
             title: "6.7.15.0",
             due_on: "2026-10-05T00:00:00Z",
@@ -519,7 +519,7 @@ describe("ensureLtsPatchMilestone", () => {
         await ensureLtsPatchMilestone(toolkit, schedule);
 
         expect(toolkit.github.rest.issues.createMilestone).toHaveBeenCalledWith(expect.objectContaining({
-            owner: "shopwell",
+            owner: "shopwell-shop",
             repo: "shopwell",
             title: "6.6.10.26",
             due_on: "2026-10-05T00:00:00Z",

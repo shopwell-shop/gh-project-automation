@@ -46,7 +46,7 @@ export async function getLabelByName(toolkit: Toolkit, repository: string, label
         }
     }>(/* GraphQL */ `
         query getLabelId($repository: String!, $labelName: String!) {
-            repository(owner: "shopwell", name: $repository) {
+            repository(owner: "shopwell-shop", name: $repository) {
                 label(name: $labelName) {
                     id
                     name
@@ -104,7 +104,7 @@ export async function findIssueWithProjectItems(toolkit: Toolkit, number: number
         }
     }>(/* GraphQL */ `
         query findIssueWithProjectItems($number: Int!) {
-            repository(owner: "shopwell", name: "shopwell") {
+            repository(owner: "shopwell-shop", name: "shopwell") {
                 issue(number: $number) {
                     projectItems(first: 20) {
                         nodes {
@@ -155,7 +155,7 @@ export async function findPRWithProjectItems(toolkit: Toolkit, number: number) {
         }
     }>(/* GraphQL */ `
         query findPRWithProjectItems($number: Int!) {
-            repository(owner: "shopwell", name: "shopwell") {
+            repository(owner: "shopwell-shop", name: "shopwell") {
                 pullRequest(number: $number) {
                     projectItems(first: 20) {
                         nodes {
@@ -262,7 +262,7 @@ export async function getProjectInfo(toolkit: Toolkit, data: {
         }
     `,
         {
-            organization: data.organization ?? "shopwell",
+            organization: data.organization ?? "shopwell-shop",
             projectNumber: data.number,
         }
     )
@@ -316,7 +316,7 @@ export async function addProjectItem(toolkit: Toolkit, data: {
  * @param number - The project number to get the ID for.
  * @param organization - The organization name whose projects to consider.
  */
-export async function getProjectIdByNumber(toolkit: Toolkit, number: number, organization: string | null = "shopwell") {
+export async function getProjectIdByNumber(toolkit: Toolkit, number: number, organization: string | null = "shopwell-shop") {
     const res = await toolkit.github.graphql<{
         organization: {
             projectV2: {
@@ -777,7 +777,7 @@ export async function getVerifiedDomainEmails(toolkit: Toolkit, login: string, o
  * @param milestoneTitle the title of the milestone
  * @param organization - The organization name of the repository
  */
-export async function getMilestoneByTitle(toolkit: Toolkit, repo: string, milestoneTitle: string, organization: string = "shopwell"): Promise<GitHubMilestone | undefined> {
+export async function getMilestoneByTitle(toolkit: Toolkit, repo: string, milestoneTitle: string, organization: string = "shopwell-shop"): Promise<GitHubMilestone | undefined> {
     const milestones = await toolkit.github.paginate(toolkit.github.rest.issues.listMilestones, {
         owner: organization,
         repo: repo

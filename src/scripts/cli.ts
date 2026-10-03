@@ -33,7 +33,7 @@ export async function run(method: string, ...args: string[]) {
 
     switch (method) {
         case "getProjectIdByNumber":
-            result = await automation.getProjectIdByNumber(toolkit, parseInt(args[0]), "shopwell");
+            result = await automation.getProjectIdByNumber(toolkit, parseInt(args[0]), "shopwell-shop");
             break;
         case "getIssuesByProject":
             result = await automation.getIssuesByProject(toolkit, args[0], null, null);
@@ -63,13 +63,13 @@ export async function run(method: string, ...args: string[]) {
             result = await automation.manageOldPullRequests(toolkit, args[0], parseInt(args[1]), args[2] === "true");
             break;
         case "getOldBranches":
-            result = await automation.getOldBranches(toolkit, args[0], args[1], "shopwell");
+            result = await automation.getOldBranches(toolkit, args[0], args[1], "shopwell-shop");
             break;
         case "cleanupOldBranches":
-            await automation.cleanupBranches(toolkit, args[0], "shopwell");
+            await automation.cleanupBranches(toolkit, args[0], "shopwell-shop");
             break;
         case "cancelStuckWorkflows":
-            await automation.cancelStuckWorkflows(toolkit, args[0], "shopwell");
+            await automation.cancelStuckWorkflows(toolkit, args[0], "shopwell-shop");
             break;
         default:
             // eslint-disable-next-line no-console

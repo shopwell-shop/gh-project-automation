@@ -56,7 +56,7 @@ describe("lastHumanActivityAt", () => {
     });
 
     it("reads replies inside review threads, which the timeline does not report", () => {
-        // Regression: shopwell/shopwell#16259, where the author answered on 2026-07-21
+        // Regression: shopwell-shop/shopwell#16259, where the author answered on 2026-07-21
         // with a single inline reply. That produces no timeline item at all, and reading
         // the timeline alone dated the pull request three months early.
         const at = lastHumanActivityAt({

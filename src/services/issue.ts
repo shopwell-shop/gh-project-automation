@@ -187,7 +187,7 @@ export async function cleanupNeedsTriage(toolkit: Toolkit, dryRun: boolean = fal
     while (hasNextPageIssues) {
         const res: QueryResponse = await toolkit.github.graphql<QueryResponse>(/* GraphQL */ `
             query getOpenIssues($cursor: String) {
-                repository(owner: "shopwell", name: "shopwell") {
+                repository(owner: "shopwell-shop", name: "shopwell") {
                     issues(first: 100, after: $cursor, states: OPEN) {
                         pageInfo {
                             hasNextPage
@@ -229,7 +229,7 @@ export async function cleanupNeedsTriage(toolkit: Toolkit, dryRun: boolean = fal
     while (hasNextPagePRs) {
         const res: QueryResponse = await toolkit.github.graphql<QueryResponse>(/* GraphQL */ `
             query getOpenPRs($cursor: String) {
-                repository(owner: "shopwell", name: "shopwell") {
+                repository(owner: "shopwell-shop", name: "shopwell") {
                     pullRequests(first: 100, after: $cursor, states: OPEN) {
                         pageInfo {
                             hasNextPage
@@ -277,7 +277,7 @@ export async function findWithProjectItems(toolkit: Toolkit) {
     }
 }
 
-export async function linkClosingPR(toolkit: Toolkit, issueNumber: number, prReadToken: string, visibilityFilter: string = "PRIVATE", org: string = "shopwell", repo: string = "shopwell") {
+export async function linkClosingPR(toolkit: Toolkit, issueNumber: number, prReadToken: string, visibilityFilter: string = "PRIVATE", org: string = "shopwell-shop", repo: string = "shopwell") {
     const prReadClient = getOctokit(prReadToken);
     type ClosingPRResponse = {
         repository: {

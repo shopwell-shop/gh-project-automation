@@ -3,7 +3,7 @@
  *
  * GitHub's own `updated_at` cannot answer this, because it also moves for label and
  * milestone edits, reviewer changes, base-branch retargeting and bot comments. Automation
- * that measures it measures its own noise: one milestone rotation in shopwell/shopwell
+ * that measures it measures its own noise: one milestone rotation in shopwell-shop/shopwell
  * touched 71 of 273 open pull requests in a single pass and reset all of their clocks.
  *
  * Counted: commits, issue comments, submitted reviews and replies inside review threads.

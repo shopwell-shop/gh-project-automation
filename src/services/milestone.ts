@@ -81,7 +81,7 @@ const NON_BUMPABLE_BASE_REGEX = /^(saas\/\d{4}\/\d+|\d+\.\d+(\.\d+)*\.x)$/;
 export type MoveMilestoneLabelsOptions = {
     /** Current version whose milestone label should be moved, e.g. "6.7.10.0". */
     version: string;
-    /** Repository owner. Defaults to "shopwell". */
+    /** Repository owner. Defaults to "shopwell-shop". */
     owner?: string;
     /** Repository name. Defaults to "shopwell". */
     repo?: string;
@@ -159,7 +159,7 @@ async function findOpenPullRequestsWithLabel(toolkit: Toolkit, owner: string, re
  * @param options - see {@link MoveMilestoneLabelsOptions}
  */
 export async function moveMilestoneLabelsToNextVersion(toolkit: Toolkit, options: MoveMilestoneLabelsOptions): Promise<void> {
-    const owner = options.owner ?? "shopwell";
+    const owner = options.owner ?? "shopwell-shop";
     const repo = options.repo ?? "shopwell";
     const dryRun = options.dryRun ?? isDryRun();
 
@@ -307,7 +307,7 @@ async function branchExists(toolkit: Toolkit, owner: string, repo: string, branc
 export type MoveLtsMilestoneLabelsOptions = {
     /** The released maintenance version, e.g. "6.6.10.25". */
     version: string;
-    /** Repository owner. Defaults to "shopwell". */
+    /** Repository owner. Defaults to "shopwell-shop". */
     owner?: string;
     /** Repository name. Defaults to "shopwell". */
     repo?: string;
@@ -328,7 +328,7 @@ export type MoveLtsMilestoneLabelsOptions = {
  * @param options - see {@link MoveLtsMilestoneLabelsOptions}
  */
 export async function moveLtsMilestoneLabels(toolkit: Toolkit, options: MoveLtsMilestoneLabelsOptions): Promise<void> {
-    const owner = options.owner ?? "shopwell";
+    const owner = options.owner ?? "shopwell-shop";
     const repo = options.repo ?? "shopwell";
     const dryRun = options.dryRun ?? isDryRun();
 
@@ -361,7 +361,7 @@ export async function moveLtsMilestoneLabels(toolkit: Toolkit, options: MoveLtsM
 }
 
 export type CloseCompletedMilestonesOptions = {
-    /** Repository owner. Defaults to "shopwell". */
+    /** Repository owner. Defaults to "shopwell-shop". */
     owner?: string;
     /** Repository name. Defaults to "shopwell". */
     repo?: string;
@@ -413,7 +413,7 @@ async function hasReleaseTag(toolkit: Toolkit, owner: string, repo: string, vers
  * @param options - see {@link CloseCompletedMilestonesOptions}
  */
 export async function closeCompletedMilestones(toolkit: Toolkit, options: CloseCompletedMilestonesOptions = {}): Promise<void> {
-    const owner = options.owner ?? "shopwell";
+    const owner = options.owner ?? "shopwell-shop";
     const repo = options.repo ?? "shopwell";
     const dryRun = options.dryRun ?? isDryRun();
 
@@ -486,7 +486,7 @@ export async function closeCompletedMilestones(toolkit: Toolkit, options: CloseC
  * label of any PR that didn't get merged in the merge window to the next
  * version, and closes the milestones of versions that have shipped. It reads
  * the released version from the `TAG` environment variable (e.g. "v6.7.10.0")
- * and operates on shopwell/shopwell.
+ * and operates on shopwell-shop/shopwell.
  *
  * Both steps run even if the other fails, so a single unlabelable PR cannot
  * leave the milestone open for good.
@@ -507,7 +507,7 @@ export async function updateMilestonesOnRelease(toolkit: Toolkit) {
     // A maintenance line counts in the fourth segment and has no branch-off, so the
     // trunk rule would bump it to a minor that will never be released.
     const maintenanceBranch = maintenanceBranchOf(version);
-    const isMaintenanceLine = maintenanceBranch !== undefined && await branchExists(toolkit, "shopwell", "shopwell", maintenanceBranch);
+    const isMaintenanceLine = maintenanceBranch !== undefined && await branchExists(toolkit, "shopwell-shop", "shopwell", maintenanceBranch);
 
     let moveError: unknown;
     try {
@@ -536,7 +536,7 @@ export type EnsureReleaseMilestoneOptions = {
     releaseDate: string;
     /** Human-readable branch-off date for the description. */
     branchOffDate: string;
-    /** Repository owner. Defaults to "shopwell". */
+    /** Repository owner. Defaults to "shopwell-shop". */
     owner?: string;
     /** Repository name. Defaults to "shopwell". */
     repo?: string;
@@ -630,7 +630,7 @@ export async function ensureReleaseMilestone(toolkit: Toolkit, options: EnsureRe
         version: options.version,
         dueOn: options.dueOn,
         description: milestoneDescription(options),
-        owner: options.owner ?? "shopwell",
+        owner: options.owner ?? "shopwell-shop",
         repo: options.repo ?? "shopwell",
         dryRun: options.dryRun ?? isDryRun(),
     });
@@ -643,7 +643,7 @@ export type EnsureLtsPatchMilestoneOptions = {
     dueOn: string;
     /** Human-readable release date for the description, e.g. "Monday, October 5, 2026". */
     releaseDate: string;
-    /** Repository owner. Defaults to "shopwell". */
+    /** Repository owner. Defaults to "shopwell-shop". */
     owner?: string;
     /** Repository name. Defaults to "shopwell". */
     repo?: string;
@@ -673,7 +673,7 @@ export async function ensureLtsPatchMilestone(toolkit: Toolkit, options: EnsureL
         version: options.version,
         dueOn: options.dueOn,
         description: `Planned on-prem release: ${options.releaseDate}.`,
-        owner: options.owner ?? "shopwell",
+        owner: options.owner ?? "shopwell-shop",
         repo: options.repo ?? "shopwell",
         dryRun: options.dryRun ?? isDryRun(),
     });
@@ -688,7 +688,7 @@ export type ScheduleReleaseMilestoneOptions = {
      * when no maintenance line is currently active.
      */
     ltsVersion?: string;
-    /** Repository owner. Defaults to "shopwell". */
+    /** Repository owner. Defaults to "shopwell-shop". */
     owner?: string;
     /** Repository name. Defaults to "shopwell". */
     repo?: string;
@@ -739,7 +739,7 @@ async function lastReleasedMinor(toolkit: Toolkit, owner: string, repo: string, 
  * @param options - see {@link ScheduleReleaseMilestoneOptions}
  */
 export async function scheduleReleaseMilestone(toolkit: Toolkit, options: ScheduleReleaseMilestoneOptions): Promise<void> {
-    const owner = options.owner ?? "shopwell";
+    const owner = options.owner ?? "shopwell-shop";
     const repo = options.repo ?? "shopwell";
 
     const matches = VERSION_REGEX.exec(options.version);
