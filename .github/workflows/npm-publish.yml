@@ -50,8 +50,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish exact version to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
