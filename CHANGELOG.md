@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.20.0
+
+### Features
+
+* Warn inactive pull requests before closing them after a second inactivity period. Respect human activity, draft conversion times, exclusions and lifecycle labels.
+* Create missing lifecycle labels and keep their color and descriptions consistent.
+
+### Bug Fixes
+
+* Keep review state unchanged when warning a pull request, and withdraw the warning label if its comment fails.
+* Use a 28-day inactivity period when closing stale issues.
+
 ## [1.19.0](https://github.com/shopwell-shop/gh-project-automation/compare/v1.18.0...v1.19.0) (2026-09-15)
 
 
