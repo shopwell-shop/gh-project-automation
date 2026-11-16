@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.21.0
+
+### Features
+
+* Label external contributions and support optional label-based channel notifications.
+
+### Bug Fixes
+
+* Retry stale pull request searches after server errors and reduce activity pagination size.
+
 ## 1.20.0
 
 ### Features
